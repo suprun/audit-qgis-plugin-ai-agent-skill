@@ -1,0 +1,4 @@
+interface:
+  display_name: "QGIS Plugin Compliance Audit"
+  short_description: "Audit QGIS plugins before official publication"
+  default_prompt: "Use $audit-qgis-plugin to audit this QGIS plugin for official repository compliance."

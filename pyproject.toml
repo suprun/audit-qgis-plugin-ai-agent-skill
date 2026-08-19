@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audit-qgis-plugin"
+version = "0.1.0"
+description = "Audit QGIS Python plugin source directories and ZIP packages for publication in the official QGIS Plugin Repository."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "audit-qgis-plugin Contributors" }
+]
+keywords = [
+    "qgis",
+    "pyqgis",
+    "gis",
+    "plugin",
+    "audit",
+    "linter",
+    "security",
+    "agent-skill"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Security",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "bandit>=1.7",
+    "detect-secrets>=1.4",
+    "flake8>=6.0",
+]
+
+[project.scripts]
+audit-qgis-plugin = "scripts.audit_qgis_plugin:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
